@@ -17,7 +17,8 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1.25rem;
+    padding: .75rem 1.5rem;
+    box-shadow: .5px .5px 5px gainsboro;
 
     img {
         width: 45px;
@@ -25,6 +26,11 @@ header {
 
     h6 {
         font-size: 1.05rem;
+        color: green;
+        opacity: .75;
+        letter-spacing: .5px;
+        word-spacing: 1px;
+        margin-left: .5rem;
     }
 }
 </style>
