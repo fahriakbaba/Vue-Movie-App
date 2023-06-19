@@ -5,7 +5,7 @@
             <h6>Vue Movie App</h6>
         </div>
         <div class="search">
-            <input type="text" />
+            <input type="text" placeholder="Search movie you want!" />
         </div>
     </header>
 </template>
@@ -29,7 +29,7 @@ header {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        
+
         img {
             width: 45px;
         }
@@ -42,6 +42,25 @@ header {
             word-spacing: 1px;
             margin-left: .5rem;
         }
+    }
+
+    .search {
+        input {
+            padding: 4px 8px;
+            outline: none;
+            border-radius: 3px;
+            border: 2px solid  #41B883;
+            transition: all .7s;
+
+            &::placeholder {
+                color: gray;
+            }
+
+            &:focus {
+                border-color: #298f61e1;
+            }
+        }
+
     }
 }
 </style>
