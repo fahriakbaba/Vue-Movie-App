@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header @search-movie="getMovie()" />
 </template>
 
 <script>
@@ -9,7 +9,27 @@ export default {
   name: 'App',
   components: {
     Header
-  }
+  },
+  data() {
+    return {
+      movieList: [],
+    }
+  },
+  methods: {
+    getMovie: async function(movieName) {
+      
+      const res = await fetch(`http://www.omdbapi.com/?apikey=334af70c&s=${movieName}`);
+      const data = await res.json();
+      console.log("data: ",data.Search);
+
+      if(res.status === 200) {
+      this.movieList = data.Search;
+      console.log("movielist",this.movieList);
+      }
+
+    },
+  },
+
 }
 </script>
 

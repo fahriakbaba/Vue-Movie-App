@@ -23,15 +23,8 @@ export default {
     },
     methods: {
         handleSubmit() {
-            const getMovie = async (movieName) => {
-                const res = await fetch(`http://www.omdbapi.com/?apikey=${this.API_key}&s=${movieName}`);
-                const data = await res.json();
-                console.log("data: ", data);
-            }
-
-            getMovie(this.searchMovie)
-
-            console.log(this.searchMovie);
+            this.$emit("search-movie", this.movieName)
+            console.log("the movie name you want to search:  ",this.searchMovie);
             this.searchMovie = "";
         }
     }
@@ -86,8 +79,8 @@ header {
             padding: 4px 8px;
             border-radius: 0 3px 3px 0;
             cursor: pointer;
-            background-color: white;
-            color: darkgreen;
+            background-color: #41B883;
+            color: white;
             border: 2px solid #41B883;
             border-left: none;
             transition:  all .7s;
