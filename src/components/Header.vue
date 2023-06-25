@@ -4,16 +4,27 @@
             <img src="https://avatars.githubusercontent.com/u/6128107?s=280&v=4" alt="vue-photo">
             <h6>Vue Movie App</h6>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Search movie you want!" />
-        </div>
+        <form class="search" @submit.prevent="handleSubmit">
+            <input type="text" placeholder="Search movie you want!" v-model="searchMovie" />
+            <button type="submit" class="btn">Search</button>
+        </form>
     </header>
 </template>
 
 <script>
 export default {
     name: "Header",
-
+    data() {
+        return {
+            searchMovie: "",
+        }
+    },
+    methods: {
+        handleSubmit() {
+            console.log(this.searchMovie);
+            this.searchMovie = "";
+        }
+    }
 }
 </script>
 
@@ -48,8 +59,8 @@ header {
         input {
             padding: 4px 8px;
             outline: none;
-            border-radius: 3px;
-            border: 2px solid  #41B883;
+            border-radius: 3px 0 0 3px;
+            border: 2px solid #41B883;
             transition: all .7s;
 
             &::placeholder {
@@ -61,6 +72,23 @@ header {
             }
         }
 
+        .btn {
+            padding: 4px 8px;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            background-color: white;
+            color: darkgreen;
+            border: 2px solid #41B883;
+            border-left: none;
+            transition:  all .7s;
+            outline: none;
+
+            &:hover {
+                background-color: darkgreen;
+                color: white;
+                border-color: darkgreen;
+            }
+        }
     }
 }
 </style>
