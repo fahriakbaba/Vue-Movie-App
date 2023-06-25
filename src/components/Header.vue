@@ -5,7 +5,7 @@
             <h6>Vue Movie App</h6>
         </div>
         <form class="search" @submit.prevent="handleSubmit">
-            <input type="text" placeholder="Search movie you want!" v-model="searchMovie" />
+            <input type="text" v-bind:placeholder="placeholder" v-model="searchMovie" />
             <button type="submit" class="btn">Search</button>
         </form>
     </header>
@@ -17,10 +17,20 @@ export default {
     data() {
         return {
             searchMovie: "",
+            placeholder: "Search movie you want!",
+            API_key: "334af70c",  
         }
     },
     methods: {
         handleSubmit() {
+            const getMovie = async (movieName) => {
+                const res = await fetch(`http://www.omdbapi.com/?apikey=${this.API_key}&s=${movieName}`);
+                const data = await res.json();
+                console.log("data: ", data);
+            }
+
+            getMovie(this.searchMovie)
+
             console.log(this.searchMovie);
             this.searchMovie = "";
         }
@@ -92,3 +102,8 @@ header {
     }
 }
 </style>
+
+
+
+<!-- const API_key = "334af70c";
+`http://www.omdbapi.com/?apikey=${API_key}&s=${searchMovie}` -->
