@@ -23,8 +23,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            this.$emit("search-movie", this.movieName)
-            console.log("the movie name you want to search:  ",this.searchMovie);
+            this.$emit("search-movie", this.searchMovie)
             this.searchMovie = "";
         }
     }

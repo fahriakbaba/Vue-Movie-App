@@ -1,5 +1,5 @@
 <template>
-  <Header @search-movie="getMovie()" />
+  <Header @search-movie="getMovie" />
 </template>
 
 <script>
@@ -13,18 +13,23 @@ export default {
   data() {
     return {
       movieList: [],
+      errorMessage: "",
     }
   },
   methods: {
-    getMovie: async function(movieName) {
-      
+    async getMovie(movieName) {
       const res = await fetch(`http://www.omdbapi.com/?apikey=334af70c&s=${movieName}`);
       const data = await res.json();
-      console.log("data: ",data.Search);
 
-      if(res.status === 200) {
-      this.movieList = data.Search;
-      console.log("movielist",this.movieList);
+      console.log("res: ", res);
+      console.log("data: ",data);
+
+      if ((res.status === 200) && (data.Response === "True")) {
+        this.movieList = data.Search;
+        this.errorMessage ="";
+      } else {
+        this.errorMessage= data.Error;
+        this.movieList = [];
       }
 
     },
