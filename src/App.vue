@@ -1,14 +1,17 @@
 <template>
   <Header @search-movie="getMovie" />
+  <Movies :movieList="movieList" />
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Movies from "./components/Movies.vue";
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Movies
   },
   data() {
     return {

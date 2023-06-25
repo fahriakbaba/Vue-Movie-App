@@ -23,6 +23,10 @@ export default {
     },
     methods: {
         handleSubmit() {
+            if(!this.searchMovie) {
+                alert("Please, enter a valid movie search name!");
+            }
+
             this.$emit("search-movie", this.searchMovie)
             this.searchMovie = "";
         }
