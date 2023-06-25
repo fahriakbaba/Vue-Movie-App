@@ -93,6 +93,15 @@ header {
         }
     }
 }
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+    }
+}
 </style>
 
 
