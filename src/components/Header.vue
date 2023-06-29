@@ -39,7 +39,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .75rem 3rem;
+    padding: 1.5rem 3rem;
     box-shadow: .5px .5px 5px gainsboro;
 
     .logo {
@@ -52,7 +52,7 @@ header {
         }
 
         h6 {
-            font-size: 1.05rem;
+            font-size: 1.25rem;
             color: darkgreen;
             opacity: .75;
             letter-spacing: .1px;
