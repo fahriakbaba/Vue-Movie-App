@@ -39,7 +39,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .75rem 1.5rem;
+    padding: .75rem 3rem;
     box-shadow: .5px .5px 5px gainsboro;
 
     .logo {
