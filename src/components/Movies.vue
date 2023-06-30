@@ -29,8 +29,7 @@ export default {
 
     div {
         box-shadow: .5px .5px 5px gainsboro;
-        padding: 1rem 3rem;
-        width: 300px;
+        width: 250px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -44,9 +43,9 @@ export default {
         }
 
         img {
-            width: 255px;
+            width: 250px;
             height: 350px;
-            border-radius: 4px;
+            border-radius: 8px 8px 0 0;
         }
 
         p{
