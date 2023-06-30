@@ -36,6 +36,7 @@ export default {
         align-items: center;
         border-radius: 8px;
         transition: box-shadow .5s, transform .5s;
+        border: 1px solid gainsboro;
 
         &:hover {
             box-shadow: 1px 1px 5px gray;
@@ -52,10 +53,12 @@ export default {
             font-size: 1rem;
             font-weight: bold;
             margin: .5rem auto;
+            text-align: center;
         }
 
         span {
             font-size: .75rem;
+            margin-bottom: 4px;
         }
     }
 }
