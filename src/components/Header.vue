@@ -98,17 +98,36 @@ header {
     }
 }
 
+@media (max-width:540px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 @media (max-width: 480px) {
     header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: .5rem;
+
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            input, .btn {
+                width: 100%;
+                border-radius: 2px;
+            }
+
+            input {
+                text-align: center;
+            }
+        }
     }
 }
+
 </style>
-
-
-
-<!-- const API_key = "334af70c";
-`http://www.omdbapi.com/?apikey=${API_key}&s=${searchMovie}` -->
