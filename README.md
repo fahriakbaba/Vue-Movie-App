@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+cd Vue-Movie-App
 npm install
 ```
 
