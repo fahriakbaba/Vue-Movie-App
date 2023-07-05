@@ -7,7 +7,7 @@
     <Loading />
   </div>
   <div v-show="errorMessage">
-    {{ errorMessage }}
+    <ErrorMessage :message="errorMessage" />
   </div>
 </template>
 
@@ -15,13 +15,15 @@
 import Header from "./components/Header.vue";
 import Movies from "./components/Movies.vue";
 import Loading from "./components/Loading.vue";
+import ErrorMessage from "./components/ErrorMessage.vue";
 
 export default {
   name: 'App',
   components: {
     Header,
     Movies,
-    Loading
+    Loading,
+    ErrorMessage
   },
   data() {
     return {
