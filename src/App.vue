@@ -6,6 +6,9 @@
   <div v-show="isLoading">
     <Loading />
   </div>
+  <div v-show="errorMessage">
+    {{ errorMessage }}
+  </div>
 </template>
 
 <script>
@@ -30,6 +33,7 @@ export default {
   methods: {
     async getMovie(movieName) {
       this.isLoading = true;
+      this.errorMessage = "";
       const res = await fetch(`http://www.omdbapi.com/?apikey=334af70c&s=${movieName}`);
       const data = await res.json();
 
